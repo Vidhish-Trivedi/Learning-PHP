@@ -23,9 +23,9 @@ echo "8 - " . strtolower($string) . '<br>' . PHP_EOL;
 echo "9 - " . ucfirst('hello') . '<br>' . PHP_EOL;
 echo "10 - " . lcfirst('HELLO') . '<br>' . PHP_EOL;
 echo "11 - " . ucwords('hello world') . '<br>' . PHP_EOL;
-echo "12 - " . strpos($string, 'world') . '<br>' . PHP_EOL; // Change into world
-echo "13 - " . stripos($string, 'world') . '<br>' . PHP_EOL;
-echo "14 - " . substr($string, 8) . '<br>' . PHP_EOL;
+echo "12 - " . strpos($string, 'world') . '<br>' . PHP_EOL;      // returns index.
+echo "13 - " . stripos($string, 'world') . '<br>' . PHP_EOL;    // ignore case of word to search for.
+echo "14 - " . substr($string, 8) . '<br>' . PHP_EOL;          // substr starting at index 8 till end, although a third argument can be passed for length of substr.
 echo "15 - " . str_replace('World', 'PHP', $string) . '<br>' . PHP_EOL;
 echo "16 - " . str_ireplace('world', 'PHP', $string) . '<br>' . PHP_EOL;
 
@@ -43,7 +43,7 @@ $longText = "
   I love my daughter
 ";
 echo $longText . '<br>' . PHP_EOL;
-echo nl2br($longText) . '<br>' . PHP_EOL;
+echo nl2br($longText) . '<br>' . PHP_EOL;     // function to convert \newline to <br> in input string.
 
 // Multiline text and reserve html tags
 $longText = "
@@ -53,11 +53,10 @@ $longText = "
 ";
 echo "1 - " . $longText . '<br>';
 echo "2 - " . nl2br($longText) . '<br>';
-echo "3 - " . htmlentities($longText) . '<br>' . PHP_EOL;
-echo "4 - " . nl2br(htmlentities($longText)) . '<br>' . PHP_EOL;
-echo "5 - " . html_entity_decode(htmlentities($longText)) . '<br>' . PHP_EOL;
-echo "6 - " . htmlspecialchars($longText) . '<br>' . PHP_EOL;
-
+echo "3 - " . htmlentities($longText) . '<br>' . PHP_EOL;     // displays HTML entities as plain-text.
+echo "4 - " . nl2br(htmlentities($longText)) . '<br>' . PHP_EOL;      // functions can be nested.
+echo "5 - " . html_entity_decode(htmlentities($longText)) . '<br>' . PHP_EOL;     // decode HTML special characters.
+echo "6 - " . htmlspecialchars($longText) . '<br>' . PHP_EOL;       
 
 // https://www.php.net/manual/en/ref.strings.php
 
